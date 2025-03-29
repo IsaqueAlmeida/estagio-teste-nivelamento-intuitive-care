@@ -52,7 +52,8 @@ links = (
     """data-tippreview-enabled="true" """
     """data-tippreview-image="" """
     """data-tippreview-title=""
-    href="https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos/Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025.pdf"""
+    href="https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos/Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025.pdf"
+    """
     """style="" target="_blank" title="">Anexo II.</a>, """
     """<a class="internal-link" """
     """data-mce-href="resolveuid/26bf4441cb3d4b48a26f59185e90f953" """
@@ -77,8 +78,9 @@ soup = BeautifulSoup(links, "html.parser")
 link = []
 for links in soup.find_all("a", attrs={"class": "internal-link"}):
     href = links["href"]
+    # dados_href = links.
     # irá verificar se os links terminam com .PDF
-    if href.lower().endswith(".pdf"):
+    if href.lower().endswith((".pdf", "anexo I", "anexo II")):
         print(href)
     # else:
-    #     print("links não está em PDF")
+    #     print(f"{href} NÃO ESTÁ EM PDF!")
