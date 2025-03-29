@@ -51,7 +51,6 @@ resposta_1 = requests.get(anexo_1)
 resposta_2 = requests.get(anexo_2)
 
 # Criando a pasta para salvar os arquivos
-# dir_anexos = os.path.join(os.getcwd(), "anexos")
 os.makedirs("anexos", exist_ok=True)
 
 # Após criar a pasta, vamos baixar os arquivos:
