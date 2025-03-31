@@ -1,0 +1,44 @@
+{
+  "info": {
+    "_postman_id": "your-postman-id",
+    "name": "Operadoras API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Buscar Operadoras",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/buscar-operadoras?nome=UNIMED",
+          "host": ["{{base_url}}"],
+          "path": ["buscar-operadoras"],
+          "query": [
+            {
+              "key": "nome",
+              "value": "UNIMED",
+              "description": "Nome da operadora a ser buscada"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Exemplo de resposta",
+          "status": "200 OK",
+          "code": 200,
+          "body": "{\n  \"operadoras\": [\n    {\n      \"id\": 1,\n      \"nome\": \"UNIMED SP\",\n      \"registro_ans\": \"12345\",\n      \"cnpj\": \"00.000.000/0001-00\"\n    },\n    {\n      \"id\": 2,\n      \"nome\": \"UNIMED RJ\",\n      \"registro_ans\": \"67890\",\n      \"cnpj\": \"00.000.000/0002-00\"\n    }\n  ]\n}",
+          "header": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000",
+      "type": "string"
+    }
+  ]
+}
